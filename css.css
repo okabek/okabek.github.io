@@ -1,3 +1,11 @@
+html {
+    font-family: monospace;
+}
+
+body {
+    background-color: black;
+}
+
 .topnav{
     background-color: #141414;
     overflow: hidden;
@@ -22,12 +30,4 @@
 .topnav a.active {
     background-color: #212121;
     color: white;
-}
-
-html{
-    font-family: "Lato", Arial, sans-serif;
-}
-
-body {
-    background-color: black;
 }

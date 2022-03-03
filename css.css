@@ -4,7 +4,7 @@
 }
 
     .topnav a {
-        float: left;
+        list-style-type: none;
         color: #50C878;
         text-align: center;
         padding: 14px 16px;

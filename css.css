@@ -24,7 +24,7 @@
 }
 
 div {
-    height: 100px;
-    background-color: red;
+    height: 100%;
+    background-color: black;
     background-image: linear-gradient( to right, red, #f06d06 );
 }

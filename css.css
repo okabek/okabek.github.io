@@ -1,9 +1,9 @@
-.topnav {
+.topnav{
     background-color: #141414;
     overflow: hidden;
 }
 
-.topnav a {
+.topnav a{
     list-style-type: none;
     color: #46a164;
     text-align: center;
@@ -13,20 +13,20 @@
     display: inline-block;
 }
 
-    .topnav a:hover {
-        background-color: #215c2e;
-        color: #18d642;
-    }
+.topnav a:hover {
+    background-color: #215c2e;
+    color: #18d642;
+}
 
 .topnav a.active {
     background-color: #212121;
     color: white;
 }
 
-html{
+.html{
     font-family: "Lato", Arial, sans-serif;
 }
 
-.gradient {
+.body {
     background-color: black;
 }

@@ -23,7 +23,8 @@
     color: white;
 }
 
-.gradient {
-    background-color: black;
-    background-image: linear-gradient(red, orange);
+div {
+    height: 100px;
+    background-color: red;
+    background-image: linear-gradient( to right, red, #f06d06 );
 }

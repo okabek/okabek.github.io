@@ -5,7 +5,7 @@
 
 .topnav a {
     list-style-type: none;
-    color: #50C878;
+    color: #46a164;
     text-align: center;
     padding: 14px 16px;
     text-decoration: wavy;
@@ -27,4 +27,6 @@
     height: 100%;
     background-color: black;
     background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,200,120,1) 50%, rgba(11,41,13,1) 100%);
+    background-attachment : fixed;
+    background-size: cover;
 }

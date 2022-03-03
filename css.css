@@ -6,12 +6,12 @@ body {
     background-color: black;
 }
 
-.topnav{
+.topnav {
     background-color: #141414;
     overflow: hidden;
 }
 
-.topnav a{
+.topnav a {
     list-style-type: none;
     color: #46a164;
     text-align: center;

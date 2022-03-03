@@ -31,3 +31,10 @@ body {
     background-color: #212121;
     color: white;
 }
+
+.glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}

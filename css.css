@@ -3,22 +3,22 @@
     overflow: hidden;
 }
 
-    .topnav a {
-        list-style-type: none;
-        color: #50C878;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: wavy;
-        font-size: 17px;
-        display: inline-block;
-    }
+.topnav a {
+    list-style-type: none;
+    color: #50C878;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: wavy;
+    font-size: 17px;
+    display: inline-block;
+}
 
-        .topnav a:hover {
-            background-color: #131c14;
-            color: black;
-        }
+.topnav a:hover {
+    background-color: #131c14;
+    color: #50C878;
+}
 
-    .topnav a.active {
-        background-color: #212121;
-        color: white;
-    }
+.topnav a.active {
+    background-color: #212121;
+    color: white;
+}

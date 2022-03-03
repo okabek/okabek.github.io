@@ -22,3 +22,8 @@
     background-color: #212121;
     color: white;
 }
+
+#grad {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(80,200,120,1) 50%, rgba(11,41,13,1) 100%);
+}

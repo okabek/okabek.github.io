@@ -13,10 +13,10 @@
     display: inline-block;
 }
 
-.topnav a:hover {
-    background-color: #131c14;
-    color: #50C878;
-}
+    .topnav a:hover {
+        background-color: #215c2e;
+        color: #18d642;
+    }
 
 .topnav a.active {
     background-color: #212121;

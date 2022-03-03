@@ -11,6 +11,7 @@
     text-decoration: wavy;
     font-size: 17px;
     display: inline-block;
+    align-items: center;
 }
 
 .topnav a:hover {

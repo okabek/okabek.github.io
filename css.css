@@ -33,13 +33,6 @@ body {
     color: white;
 }
 
-.glow {
-    font-size: 80px;
-    color: #fff;
-    text-align: center;
-    animation: glowanim 1s ease-in-out infinite alternate;
-}
-
 @keyframes animate{
     50% {
         content: "Thomas Bedwell, I'm not impressed";

@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: black;
+    background-image: linear-gradient(to right, red, yellow);
 }
 
 .topnav {

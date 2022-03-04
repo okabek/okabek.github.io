@@ -41,3 +41,13 @@ body {
         content: "Thomas Bedwell, nobody's impressed";
     }
 }
+
+.box {
+    width: 300px;
+    height: 140px;
+    min-height: 60px;
+    margin: auto;
+    border: 5px solid lightgray;
+    padding: 10px;
+    word-wrap: break-word;
+}

@@ -33,33 +33,6 @@ body {
     color: white;
 }
 
-div.outer {
-    position: relative;
-    overflow: auto;
-    float: left;
-    z-index: 0;
-}
-
-div.resize {
-    position: relative;
-    width: 250px;
-    height: 300px;
-    resize: both;
-    overflow: hidden;
-    z-index: 10;
-}
-
-div.inner {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    box-shadow: inset 0 0 100px #777;
-    overflow: hidden;
-    z-index: 9;
-}
-
 @keyframes animate{
     50% {
         content: "Thomas Bedwell, I'm not impressed";

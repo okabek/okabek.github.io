@@ -40,6 +40,11 @@ body {
     animation: glow 1s ease-in-out infinite alternate;
 }
 
+span:before{
+    content: '';
+    animation: animate infinite 8s;
+}
+
 @keyframes animate{
     50% {
         content: "Thomas Bedwell, I'm not impressed";

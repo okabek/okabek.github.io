@@ -38,3 +38,12 @@ body {
     text-align: center;
     animation: glow 1s ease-in-out infinite alternate;
 }
+
+@keyframes animate{
+    50% {
+        content: "Thomas Bedwell, I'm not impressed";
+    }
+    100% {
+        content: "Thomas Bedwell, nobody's impressed";
+    }
+}

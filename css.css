@@ -1,16 +1,16 @@
 html {
     font-family: monospace;
+    text-shadow: 2px 2px #141414;
 }
 
 body {
-    background-image: linear-gradient(90deg, rgba(10,10,10,1) 50%, rgba(10,102,26,1) 100%);
-    text-shadow: 2px 2px #141414;
+    height: 100vh;
+    background: linear-gradient(60deg, #32a852 40%, #101010 25%);
 }
 
 .topnav {
     background-color: #141414;
     overflow: hidden;
-    border-bottom: 1px solid #ffffff;
 }
 
 .topnav a {
@@ -34,6 +34,29 @@ body {
     color: white;
 }
 
-.centered {
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #141414;
     text-align: center;
 }
+
+.glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: glowanim 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glowanim {
+    from {
+        text-shadow: 0 0 10px #571f1f, 0 0 20px #fff, 0 0 30px #32a852, 0 0 40px #32a852, 0 0 50px #32a852, 0 0 60px #32a852, 0 0 70px #32a852;
+    }
+
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #32a852, 0 0 40px #32a852, 0 0 50px #32a852, 0 0 60px #32a852, 0 0 70px #32a852, 0 0 80px #32a852;
+    }
+}
+

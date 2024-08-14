@@ -42,34 +42,33 @@
     
     <br><br>
     <img src="dll_injection1.png">
-    <br>
+    <br><br>
     
     
     This section of code gets the path to the directory the exe program is currently in and appends "\\main.dll" at the end of the string to create a path to the dll. It calculates how many bytes to allocate to the heap of the program we want to load onto by getting the string length of the path.
     
-    <br><br>
-    <img src="dll_injection2.png">
     <br>
+    <img src="dll_injection2.png">
+    <br><br>
     
     
     Here we get the window handle of the program by searching for the class name "UnrealWindow" (not the same thing as the handle to the program). We can use this window handle to find the process id by using the windows function 'GetWindowThreadProcessId'.
     
-    <br><br>
-    <img src="dll_injection3.png">
     <br>
+    <img src="dll_injection3.png">
+    <br><br>
     
     
     The reason I decided to use this method of finding the process id is because it's increadibly more simple than other methods and so far I haven't found any big downsides to it as you can use 'process hacker' to find the class name of any program. Below is a picture showing this process.
     
-    
-    <br><br>
+    <br>
     <img src="dll_injection5.png">
-    <br>
-    
-    
-    Next, we use the process id we obtained to get the handle to the actual program using the windows function 'OpenProcess'. After that, we allocate some virtual memory into the program's virtual address space with the byte size equal to the length of the path to our dll file using the windows function 'VirtualAllocateEx'. This returns us a base address pointing to the start of the newly allocated region. Using this base address and the windows function "WriteProcessMemory", we can write the path to our dll file at the allocated region. Finally, we can use the window function 'CreateRemoteThread' to create a thread that runs in the target program's virtual address space. To load the dll, we use the windows function 'LoadLibraryA'.  
-    
     <br><br>
-    <img src="dll_injection4.png">
+    
+    
+    Next, we use the process id we obtained to get the handle to the actual program using the windows function 'OpenProcess'. After that, we allocate some virtual memory into the program's virtual address space with the byte size equal to the length of the path to our dll file using the windows function 'VirtualAllocateEx'. This returns us a base address pointing to the start of the newly allocated region. Using this base address and the windows function "WriteProcessMemory", we can write the path to our dll file at the allocated region. Finally, we can use the window function 'CreateRemoteThread' to create a thread that runs in the target program's virtual address space. We make the program call the windows function "LoadLibraryA" with the argument being the virtual address that points to the string path to our dll. 
+    
     <br>
+    <img src="dll_injection4.png">
+    <br><br>
 </p>

@@ -1,1 +1,34 @@
+<html style="background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 64, 25, 1) 100%); text-align: center; color: rgb(2550, 255, 255);">
+    
+  <head>
+      <title>Dll injection</title>
+  </head>
+
+
+  <body>
+    <header>
+      <p style="font-size: 300%;">
+        [Dll injection]
+      </p>
+      
+     
+      <hr style="margin-bottom: 50";>
+    </header>
+    
+    <p>
+        A 'dll' is a dynamic library that contains executable code and data for other programs to use. Since it is dynamic, it can be loaded and unloaded into a program at run-time. Dll injection is the process of loading your own dll into a program with your own code to read and write to specific memory addresses in the program's memory space. The advantages of this is that it provides good performance, has the possability to be very hard to detect and allows you to call or hook the program's own functions.
+    </p>
+    
+    
+    <br>
+    
+    
+    <p>
+        The basic process of dll injection is as follows: Finding the process id of the program we want to load into, obtaining a handle to the program using that process id, allocating virtual memory into the program with the size equaling to the len of the path to our own dll, and finally creating a new thread of execution at the  heap address space of a program using LoadLibrary. A more in depth explaination will be given below.
+    </p>
+  </body>
+  
+  
+  <hr style="margin-top:50";>
+</html>
 

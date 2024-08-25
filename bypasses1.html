@@ -1,0 +1,44 @@
+<html style="background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1) ), url('lain_15_640.jpg'); text-align: center; color: rgb(255, 255, 255); text-shadow: 4px 4px rgb(0, 0, 0)">
+  <link rel="stylesheet" href="style.css">
+  <div class="noise"></div>
+  
+  <head>
+      <title>Workarounds</title>
+  </head>
+
+
+  <body>
+    <header>
+      <p class="glow" style="font-size: 300%;">
+        <b><i>[Workaround 1]</i></b>>
+      </p>
+      
+     
+      <hr style="margin-bottom: 50;">
+    </header>
+    
+    <p>
+        This page will cover 'manual mapping' and it will bypass more than just the method shown in 'detection method 1'.
+    </p>
+  </body>
+  
+  
+  <hr style="margin-top:50; margin-bottom:50">
+</html>
+
+<p>
+    First of all, you need to understand that in typical dll injection, the 'LoadLibrary' api is used. When you use 'LoadLibrary' to load your dll into the target process, windows will register its existence into the process's module list along with various data structures (such as name / size in page 'detection method 1') that can be easily detected. 
+    
+    <br><br>
+
+
+    In order to fix this vulnerability, we have to do what 'LoadLibrary' does ourself. This is why it's called 'manual mapping': because we have to do the mapping instead of relying on an api.
+
+    <br><br>
+
+    The process of manual mapping is as follows: load the binary data of the dll into the target process, map the sections of the dll into the target process, inject and run shell code into the target process to relocate the dll, fix the imports, execute tls callbacks, and call the dll's main function.
+
+    <br>
+    <img src="imgs//detection3.png">
+    <br><br>
+</p>

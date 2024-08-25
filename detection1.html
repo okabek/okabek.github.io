@@ -1,0 +1,51 @@
+<html style="background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1) ), url('lain_15_640.jpg'); text-align: center; color: rgb(255, 255, 255); text-shadow: 4px 4px rgb(0, 0, 0)">
+  <link rel="stylesheet" href="style.css">
+  <div class="noise"></div>
+  
+  <head>
+      <title>Dll detection methods</title>
+  </head>
+
+
+  <body>
+    <header>
+      <p class="glow" style="font-size: 300%;">
+        <b><i>[Dll detection methods]</i></b>>
+      </p>
+      
+     
+      <hr style="margin-bottom: 50;">
+    </header>
+    
+    <p>
+        There are many ways to detect dll injection
+    </p>
+  </body>
+  
+  
+  <hr style="margin-top:50; margin-bottom:50">
+</html>
+
+<p>
+  This is what our attacker's folder looks like. The dll we inject is called 'main.dll'.
+    
+    <br>
+    <img src="imgs//detection3.png">
+    <br><br>
+
+
+    Here is the code to detect if that specific dll has been loaded into our program. The pros of this is method of detection is that there is almost certainly no chance of a false detection occuring. You can also use different methods of identifying the harmful dll, for example, looking at the size of the module. 
+    
+    <br>
+    <img src="imgs//detection1.png">
+    <br><br>
+
+
+    As you can see, when we inject the 'main.dll' into the defensive program, it will be detected.
+    
+    <br>
+    <img src="imgs//detection2.png">
+    <br><br>
+
+    The way this works is by using 'CreateToolhelp32Snapshot', which takes a snapshot of the target process along with all of its heaps, modules, and threads. Since there is a dll (a type of module) loaded into the target program using loadlibrary, it will be identified by the windows function. 
+</p>

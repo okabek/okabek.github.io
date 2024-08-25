@@ -1,0 +1,102 @@
+<html style="background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1) ), url('lain_15_640.jpg'); text-align: center; color: rgb(255, 255, 255); text-shadow: 4px 4px rgb(0, 0, 0)">
+  <link rel="stylesheet" href="style.css">
+  <div class="noise"></div>
+  
+  <head>
+      <title>Static analysis</title>
+  </head>
+
+
+  <body>
+    <header>
+      <p style="font-size: 300%;">
+        <b><i>[Static analysis]</i></b>
+      </p>
+      
+     
+      <hr style="margin-bottom: 50;">
+    </header>
+    
+    <p>
+        Static analysis is a method of debugging a program without executing it. This can be helpful if running the program will bring up problems such as the possability that the program is a virus, or if the program has anti-debugging methods.
+    </p>
+  </body>
+  
+  
+  <hr style="margin-top:50; margin-bottom:50">
+</html>
+
+<p>
+    I created a simple c++ application that asks for a user and password to login. The code can be seen below.
+    
+    <br>
+    <img src="imgs//static1.png">
+    <br><br>
+
+
+    As you can see in the code, inputting the incorrect username or password results in the windows 'abort' function to be called. 
+
+    <br>
+    <img src="imgs//static2.png">
+    <br><br>
+
+    To bypass the login screen, we can use the debugger "IDA" to patch the program so that it won't abort even if the username or password is incorrect.
+    
+    <br>
+
+
+    When first opening the exe in IDA, we will be greeted with a graph of the program's control flow. It will open up at the program's main function:
+
+    <br>
+    <img src="imgs//static3.png">
+    <br><br>
+
+
+    This may be hard to read so we can generate pseudocode by pressing F5. This makes it easier to analyse how the program works and what we must do to bypass the login system.
+
+    <br>
+    <img src="imgs//static5.png">
+    <br><br>
+
+
+    Back to the control flow graph, you will see an if statement block that will call the 'abort' function if the condition is met. 
+
+    <br>
+    <img src="imgs//static6.png">
+    <br><br>
+
+
+    Here, the assembly jz instruction is performed. A jz instruction is an instruction that jumps (this is what the j stands for) to the next part of the code if the zero flag is equal to 0 (the z stands for the zero flag). Jump instructions represent if statements in assembly. The zero flag indicates if an operation produced 0 with 1 representing true and 0 representing false. This means the jz instruction is the same as the '!=' operator in c++. 
+
+    <br>
+    <img src="imgs//static7.png">
+    <br><br>
+
+
+    We replace this with a jnz instruction which jumps if the zero flag is equal to 1. This means the jnz instruction is equal to the '==' operator in c++. 
+
+    <br>
+    <img src="imgs//static8.png">
+    <br><br>
+
+
+    After repeating this process for the other if statement block, we patch the program with our new changes.
+
+    <br>
+    <img src="imgs//static9.png">
+    <br><br>
+
+
+    As you can see, even after entering the wrong username and password, the program does not abort.
+
+    <br>
+    <img src="imgs//static10.png">
+    <br><br>
+
+
+    If we enter the correct username, the program now aborts.
+
+    <br>
+    <img src="imgs//static11.png">
+    <br><br>
+</p>

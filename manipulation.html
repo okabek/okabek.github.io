@@ -1,0 +1,74 @@
+<html style="background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1) ), url('lain_15_640.jpg'); text-align: center; color: rgb(255, 255, 255); text-shadow: 4px 4px rgb(0, 0, 0)">
+  <link rel="stylesheet" href="style.css">
+  <div class="noise"></div>
+  
+  <head>
+      <title>Memory manipulation</title>
+  </head>
+
+
+  <body>
+    <header>
+      <p class="glow" style="font-size: 300%;">
+        <b><i>[Memory manipulation]</i></b>>
+      </p>
+      
+     
+      <hr style="margin-bottom: 50;">
+    </header>
+    
+    <p>
+        Now that we have a working dll injector, we need to make the actual dll that can read and write to the process's memory. I will not explain how I found the pointers I used below using cheat engine as that is not the goal of this page.
+    </p>
+  </body>
+  
+  
+  <hr style="margin-top:50; margin-bottom:50">
+</html>
+
+<p>
+    First, we create a new thread of execution once the dll attaches into the target program. We use 'LPTHREAD_START_ROUTINE' to point to our function called 'Main' to execute.
+
+    <br>
+    <img src="imgs//manipulation1.png">
+    <br><br>
+
+
+    Here, we use 'AllocConsole' to create a console window that we can output messages into. We also have to use 'freopen_s' to redirect 'stdout' to our newly created console window. 
+
+    <br>
+    <img src="imgs//manipulation2.png">
+    <br><br>
+
+    
+    First of all, you need to understand that to get the memory address for a specific value like a player's health, you will have to find a pointer for that memory address as it will probably not be a static memory address due to several reasons. The pointer will be in the format of (base address + some offsets). Sometimes it could just be just 1 offset but usually it will be multiple.  The base address points to the start of the program's virtual address space region.
+
+    <br><br>
+
+
+    To get the module base address of the program exe, we use 'GetModuleHandle' with the name of the exe as the argument.
+    
+    <br><br>
+
+
+    Next, I get the base address by adding the constant offset '0x644FA30' onto the module base address. I get the memory address for the player's gun ammo by using my own function called 'get_pointer_address'. If the address received is valid, we convert the address to an int and dereference it so we can change the actual value. 
+
+
+    <br>
+    <img src="imgs//manipulation3.png">
+    <br><br>
+
+
+    The 'get_pointer_address' function sets the current address as the base_address, iterates through the offsets, converts the current address into a pointer with type 'uintptr_t' and checks if it's a valid pointer. If it is, the offset at 'i' is added onto the current address. Image the process like directions to go to a destination: you start at location x (the base address), then you go left (offset 1), then you go forward (offset2); each time checking if you're at a physically possible location and not in space.
+
+    <br>
+    <img src="imgs//manipulation5.png">
+    <br><br>
+
+
+    As you can see, dereferencing the pointer to the ammo memory address and changing it to 999 has worked.
+
+    <br>
+    <img src="imgs//manipulation6.png">
+    <br><br>
+</p>
